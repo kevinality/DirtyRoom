@@ -1,0 +1,30 @@
+{
+  "name": "clean-your-room",
+  "version": "1.0.0",
+  "description": "Cleaning up some messy code by breaking it up into functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require babel-register ./tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackeducation/clean-your-room.git"
+  },
+  "author": "Stack Education",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel": "6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "mocha": "^6.1.4"
+  }
+}
