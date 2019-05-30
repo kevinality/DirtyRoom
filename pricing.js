@@ -32,7 +32,7 @@ export function calculateProductPrice(product, employee, selectedOptions) {
       return parseInt(price * 100) / 100
     }
 
-    case 'ltd':
+    case 'ltd': {
       if (fmtc.includes('ee')) {
         const eeCoverage = product.coverage.find(coverage => {
           return coverage.role === 'ee'
@@ -55,6 +55,18 @@ export function calculateProductPrice(product, employee, selectedOptions) {
       }
 
       return parseInt(price * 100) / 100
+    }
+
+    case 'commuter':{
+      function commutingCosts(subTotal, optionSelection){
+        return subTotal + product.costs.find(costs => {
+          return costs.type === optionSelection
+        }).price
+      }
+      price = selectedOptions.commutingType.reduce(commutingCosts, 0)
+      return parseInt(price * 100) / 100
+    }
+
     default:
       throw new Error(`Unknown product type: ${product.type}`)
   }
